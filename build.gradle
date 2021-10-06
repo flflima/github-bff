@@ -39,6 +39,8 @@ dependencies {
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    testImplementation 'io.rest-assured:rest-assured:4.4.0'
+
 }
 
 
