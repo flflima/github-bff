@@ -10,5 +10,5 @@ micronaut:
       paths: classpath:META-INF/swagger/views/swagger-ui
       mapping: /swagger-ui/**
 
-#github:
-#  url: https://api.github.com
+github:
+  url: https://api.github.com

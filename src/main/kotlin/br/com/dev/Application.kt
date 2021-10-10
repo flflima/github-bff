@@ -1,7 +1,7 @@
 package br.com.dev
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.micronaut.context.event.BeanCreatedEvent
 import io.micronaut.context.event.BeanCreatedEventListener
@@ -32,7 +32,7 @@ internal class ObjectMapperBeanEventListener : BeanCreatedEventListener<ObjectMa
     override fun onCreated(event: BeanCreatedEvent<ObjectMapper>): ObjectMapper {
         val mapper: ObjectMapper = event.bean
         mapper.registerModule(JavaTimeModule())
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+        mapper.disable(WRITE_DATES_AS_TIMESTAMPS)
         return mapper
     }
 }

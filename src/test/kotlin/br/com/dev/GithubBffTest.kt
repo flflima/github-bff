@@ -1,9 +1,9 @@
 package br.com.dev
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Test
 import jakarta.inject.Inject
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 @MicronautTest
 class GithubBffTest {
@@ -13,7 +13,7 @@ class GithubBffTest {
 
     @Test
     fun `application should be running`() {
-        Assertions.assertTrue(application.isRunning)
+        assertTrue(application.isRunning)
     }
 
 }
