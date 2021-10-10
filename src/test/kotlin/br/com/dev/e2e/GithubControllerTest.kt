@@ -48,9 +48,9 @@ class GithubControllerTest {
                     """
                     [
                        {
-                          "name":"aws-lambda-developer-guide",
-                          "html_url":"https://github.com/flflima/aws-lambda-developer-guide",
-                          "description":"The AWS Lambda Developer Guide",
+                          "name":"aws",
+                          "html_url":"https://github.com/user-test",
+                          "description":"A Mock Project",
                           "created_at":"2021-05-09T00:13:21Z"
                        }
                     ]
@@ -65,11 +65,13 @@ class GithubControllerTest {
             .assertThat()
             .statusCode(200)
             .and()
-            .body("$.size()", `is`(1))
+            .body("total_page", `is`(1))
+            .body("page", `is`(1))
             .and()
-            .body("[0]", hasKey("name"))
-            .body("[0]", hasKey("description"))
-            .body("[0]", hasKey("created_at"))
-            .body("[0]", hasKey("url"))
+            .body("data.size()", `is`(1))
+            .body("data[0]", hasKey("name"))
+            .body("data[0]", hasKey("description"))
+            .body("data[0]", hasKey("created_at"))
+            .body("data[0]", hasKey("url"))
     }
 }

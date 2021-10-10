@@ -1,8 +1,7 @@
 package br.com.dev.integration
 
-import br.com.dev.web.dto.ProjectDTO
-import reactor.core.publisher.Mono
+import br.com.dev.web.dto.ResponseDTO
 
 interface ApiIntegrationService {
-    fun fetchRepos(username: String, total_page: Int, page: Int): Mono<MutableList<ProjectDTO>>?
+    fun fetchRepos(username: String, totalPage: Int, page: Int): ResponseDTO
 }

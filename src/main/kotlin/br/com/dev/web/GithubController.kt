@@ -12,7 +12,7 @@ class GithubController(@Inject val apiIntegrationService: ApiIntegrationService)
     @Get("/{user}/timeline")
     fun getUserTimeline(
         user: String,
-        @QueryValue(defaultValue = "10") total_page: Int = 1,
+        @QueryValue(value = "total_page", defaultValue = "10") totalPage: Int = 1,
         @QueryValue(defaultValue = "1") page: Int = 1
-    ) = this.apiIntegrationService.fetchRepos(user, total_page, page)
+    ) = this.apiIntegrationService.fetchRepos(user, totalPage, page)
 }
