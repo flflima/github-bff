@@ -1,21 +1,15 @@
-# github-bff
+# Github BFF
 A Gihub Backend for Frontend
 
-## Micronaut 3.0.3 Documentation
+## Build
+```shell
+./gradlew clean build
+```
 
-- [User Guide](https://docs.micronaut.io/3.0.3/guide/index.html)
-- [API Reference](https://docs.micronaut.io/3.0.3/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/3.0.3/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+## Run
+```shell
+java -jar build/libs/github-bff-0.1-all.jar
+```
 
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
-
-## Feature openapi documentation
-
-- [Micronaut OpenAPI Support documentation](https://micronaut-projects.github.io/micronaut-openapi/latest/guide/index.html)
-
-- [https://www.openapis.org](https://www.openapis.org)
-
+## Swagger
+http://localhost:8080/swagger/views/swagger-ui/index.html

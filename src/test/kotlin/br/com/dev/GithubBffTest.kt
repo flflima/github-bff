@@ -12,7 +12,7 @@ class GithubBffTest {
     lateinit var application: EmbeddedApplication<*>
 
     @Test
-    fun testItWorks() {
+    fun `application should be running`() {
         Assertions.assertTrue(application.isRunning)
     }
 
