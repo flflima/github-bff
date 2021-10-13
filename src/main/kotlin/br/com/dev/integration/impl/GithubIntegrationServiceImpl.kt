@@ -11,7 +11,6 @@ import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.http.uri.UriBuilder
 import jakarta.inject.Singleton
-import reactor.core.publisher.Mono.from
 import java.net.URI
 
 @Singleton
@@ -30,8 +29,7 @@ class GithubIntegrationServiceImpl(
             .header(USER_AGENT, "Micronaut HTTP Client")
             .header(ACCEPT, "application/vnd.github.v3+json, application/json")
 
-        val data: MutableList<ProjectDTO>? = from(httpClient.retrieve(req, Argument.listOf(ProjectDTO::class.java)))
-            .block()
+        val data = httpClient.toBlocking().retrieve(req, Argument.listOf(ProjectDTO::class.java))
         return ResponseDTO(page, data?.size ?: 0, data?.toMutableList() ?: mutableListOf())
     }
 }
