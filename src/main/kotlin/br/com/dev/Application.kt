@@ -12,27 +12,27 @@ import jakarta.inject.Singleton
 
 
 @OpenAPIDefinition(
-    info = Info(
-        title = "github-bff",
-        version = "0.0"
-    )
+  info = Info(
+    title = "github-bff",
+    version = "0.0"
+  )
 )
 object Api {
 }
 
 fun main(args: Array<String>) {
-    build()
-        .args(*args)
-        .packages("br.com.dev")
-        .start()
+  build()
+    .args(*args)
+    .packages("br.com.dev")
+    .start()
 }
 
 @Singleton
 internal class ObjectMapperBeanEventListener : BeanCreatedEventListener<ObjectMapper> {
-    override fun onCreated(event: BeanCreatedEvent<ObjectMapper>): ObjectMapper {
-        val mapper: ObjectMapper = event.bean
-        mapper.registerModule(JavaTimeModule())
-        mapper.disable(WRITE_DATES_AS_TIMESTAMPS)
-        return mapper
-    }
+  override fun onCreated(event: BeanCreatedEvent<ObjectMapper>): ObjectMapper {
+    val mapper: ObjectMapper = event.bean
+    mapper.registerModule(JavaTimeModule())
+    mapper.disable(WRITE_DATES_AS_TIMESTAMPS)
+    return mapper
+  }
 }
