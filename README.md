@@ -1,5 +1,6 @@
 # Github BFF
-A Gihub Backend for Frontend
+A Gihub Backend for Frontend.
+A POC study with [Micronaut Framework](https://micronaut.io/)
 
 ## Build
 ```shell
